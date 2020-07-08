@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calificaciones</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/">
+                <img src="https://image.flaticon.com/icons/svg/1696/1696711.svg" width="30" height="30" class="d-inline-block align-top" alt=" ">
+                Inicio
+            </a>
+            <a class="navbar-brand" href="//127.0.0.1:3333/alumnos/index">
+                <img src="https://image.flaticon.com/icons/svg/1696/1696686.svg" width="30" height="30" class="d-inline-block align-top" alt=" ">
+                Alumnos
+            </a>
+            <a class="navbar-brand" href="//127.0.0.1:3333/materias/index">
+                <img src="https://image.flaticon.com/icons/svg/1696/1696699.svg" width="30" height="30" class="d-inline-block align-top" alt=" ">
+                Materias
+            </a>
+            <a class="navbar-brand" href="//127.0.0.1:3333/registros/index">
+                <img src="https://image.flaticon.com/icons/svg/1696/1696690.svg" width="30" height="30" class="d-inline-block align-top" alt=" ">
+                Registros
+            </a>
+            <a class="navbar-brand" href="//127.0.0.1:3333/calificaciones/index">
+                <img src="https://image.flaticon.com/icons/svg/1696/1696695.svg" width="30" height="30" class="d-inline-block align-top" alt=" ">
+                Calificaciones
+            </a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <form action="/calificaciones/store/" method="POST">
+            <div class="form-group">
+                <select name="idMateria" class="form-control">
+                    <option value={{materia.id}}>{{materia.materia}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <select name="idAlumno" class="form-control">
+                    @each(registro in registros)
+                        <option value={{registro.alumno.id}}>{{registro.alumno.nombre}}</option>
+                    @endeach
+                </select>
+            </div>
+
+            <div class="form-group">
+                <select name="corte" class="form-control">
+                    <option value=1>Primer Corte</option>
+                    <option value=2>Segundo Corte</option>
+                    <option value=3>Tercer Corte</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <select name="cuatrimestre" class="form-control">
+                    <option value=1>Primer Cuatrimestre</option>
+                    <option value=2>Segundo Cuatrimestre</option>
+                    <option value=3>Tercer Cuatrimestre</option>
+                    <option value=4>Cuarto Cuatrimestre</option>
+                    <option value=5>Quinto Cuatrimestre</option>
+                    <option value=6>Sexto Cuatrimestre</option>
+                    <option value=7>Septimo Cuatrimestre</option>
+                    <option value=8>Octavo Cuatrimestre</option>
+                    <option value=9>Noveno Cuatrimestre</option>
+                    <option value=10>Decimo Cuatrimestre</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                    <label>Calificacion</label>
+                <input type="number" name="calificacion" class="form-control" placeholder="Calificacion">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Aceptar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

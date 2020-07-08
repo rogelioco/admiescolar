@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulario</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+</head>
+<body>
+    <div>
+        <nav class="nnavbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/">
+                <img src="https://image.flaticon.com/icons/svg/1696/1696711.svg" width="30" height="30" class="d-inline-block align-top" alt=" ">
+                Inicio
+            </a>
+            <a class="navbar-brand" href="//127.0.0.1:3333/alumnos/index">
+                <img src="https://image.flaticon.com/icons/svg/1696/1696686.svg" width="30" height="30" class="d-inline-block align-top" alt=" ">
+                Alumnos
+            </a>
+            <a class="navbar-brand" href="//127.0.0.1:3333/materias/index">
+                <img src="https://image.flaticon.com/icons/svg/1696/1696699.svg" width="30" height="30" class="d-inline-block align-top" alt=" ">
+                Materias
+            </a>
+            <a class="navbar-brand" href="//127.0.0.1:3333/registros/index">
+                <img src="https://image.flaticon.com/icons/svg/1696/1696690.svg" width="30" height="30" class="d-inline-block align-top" alt=" ">
+                Registros
+            </a>
+            <a class="navbar-brand" href="//127.0.0.1:3333/calificaciones/index">
+                <img src="https://image.flaticon.com/icons/svg/1696/1696695.svg" width="30" height="30" class="d-inline-block align-top" alt=" ">
+                Calificaciones
+            </a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <form action="/materias/store/" method="POST">
+            <div class="form-group">
+                <label for="formMateria">Nombre de la materia</label>
+                <input type="text" class="form-control" id="materia" placeholder="Nombre" name="materia">
+            </div>
+
+            <div class="form-group">
+                <label for="formMateria">Descripcion</label>
+                <input type="text" class="form-control" id="materia" placeholder="Descripcion" name="descripcion">
+            </div>
+
+            <div class="form-group">
+                <label for="formMateria">Plan</label>
+                <input type="text" class="form-control" id="materia" placeholder="Plan" name="plan">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Crear</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

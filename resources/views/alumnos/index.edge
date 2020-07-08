@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Alumnos</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+</head>
+<body>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/">
+                <img src="https://image.flaticon.com/icons/svg/1696/1696711.svg" width="30" height="30" class="d-inline-block align-top" alt=" ">
+                Inicio
+            </a>
+            <a class="navbar-brand" href="//127.0.0.1:3333/alumnos/index">
+                <img src="https://image.flaticon.com/icons/svg/1696/1696686.svg" width="30" height="30" class="d-inline-block align-top" alt=" ">
+                Alumnos
+            </a>
+            <a class="navbar-brand" href="//127.0.0.1:3333/materias/index">
+                <img src="https://image.flaticon.com/icons/svg/1696/1696699.svg" width="30" height="30" class="d-inline-block align-top" alt=" ">
+                Materias
+            </a>
+            <a class="navbar-brand" href="//127.0.0.1:3333/registros/index">
+                <img src="https://image.flaticon.com/icons/svg/1696/1696690.svg" width="30" height="30" class="d-inline-block align-top" alt=" ">
+                Registros
+            </a>
+            <a class="navbar-brand" href="//127.0.0.1:3333/calificaciones/index">
+                <img src="https://image.flaticon.com/icons/svg/1696/1696695.svg" width="30" height="30" class="d-inline-block align-top" alt=" ">
+                Calificaciones
+            </a>
+        </nav>
+    </div>
+    <div class="container">
+        <div>
+            <h1> Lista de alumnos </h1>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Matricula</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Fecha de Nacimiento</th>
+                        <th scope="col">Domicilio</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Option 1</th>
+                        <th scope="col">Option 2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @each(alumno in alumnos)
+                    <tr>
+                        <th>{{alumno.id}}</th>
+                        <th>{{alumno.matricula}}</th>
+                        <th>{{alumno.nombre}}</th>
+                        <th>{{alumno.apellido}}</th>
+                        <th>{{alumno.fecha_nacimiento}}</th>
+                        <th>{{alumno.domicilio}}</th>
+                        <th>{{alumno.email}}</th>
+                        <th><a href="/alumnos/edit/{{alumno.id}}/"><button type="button" class="btn btn-warning">Editar</button></a></th>
+                        <th><a href="/alumnos/destroy/{{alumno.id}}/"><button type="button" class="btn btn-danger">Eliminar</button></a></th>
+                    </tr>
+                    @endeach
+                </tbody>
+            </table>
+        </div>
+        <a href="/alumnos/create"><button type="button" class="btn btn-primary btn-lg btn-block">Crear</button></a>
+
+    </div>
+</body>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Editar</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+</head>
+<body>
+    <div>
+        <nav class="nnavbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/">
+                <img src="https://image.flaticon.com/icons/svg/1696/1696711.svg" width="30" height="30" class="d-inline-block align-top" alt=" ">
+                Inicio
+            </a>
+            <a class="navbar-brand" href="//127.0.0.1:3333/alumnos/index">
+                <img src="https://image.flaticon.com/icons/svg/1696/1696686.svg" width="30" height="30" class="d-inline-block align-top" alt=" ">
+                Alumnos
+            </a>
+            <a class="navbar-brand" href="//127.0.0.1:3333/materias/index">
+                <img src="https://image.flaticon.com/icons/svg/1696/1696699.svg" width="30" height="30" class="d-inline-block align-top" alt=" ">
+                Materias
+            </a>
+            <a class="navbar-brand" href="//127.0.0.1:3333/registros/index">
+                <img src="https://image.flaticon.com/icons/svg/1696/1696690.svg" width="30" height="30" class="d-inline-block align-top" alt=" ">
+                Registros
+            </a>
+            <a class="navbar-brand" href="//127.0.0.1:3333/calificaciones/index">
+                <img src="https://image.flaticon.com/icons/svg/1696/1696695.svg" width="30" height="30" class="d-inline-block align-top" alt=" ">
+                Calificaciones
+            </a>
+        </nav>
+    </div>
+    
+    <div class="container">
+        <form action="/alumnos/update/{{alumno.id}}" method="POST">
+            <div class="form-group">
+            <label for="formAlumno">Matricula</label>
+            <input type="number" class="form-control" id="nombre" placeholder="{{alumno.matricula}}" name="matricula" disabled>
+            </div>
+
+            <div class="form-group">
+            <label for="formAlumno">Nombre del Alumno</label>
+            <input type="text" class="form-control" id="nombre" placeholder="{{alumno.nombre}}" name="nombre">
+            </div>
+        
+            <div class="form-group">
+            <label for="formAlumno">Apellidos del Alumno</label>
+            <input type="text" class="form-control" id="apellido" placeholder="{{alumno.apellido}}" name="apellido">
+            </div>
+        
+            <div class="form-group">
+            <label for="formAlumno">Fecha de Nacimiento</label>
+            <input type="date" class="form-control" id="fechaNacimiento" value="{{alumno.fecha_nacimiento}}" name="fecha_nacimiento">
+            </div>
+        
+            <div class="form-group">
+            <label for="formAlumno">Domicilio</label>
+            <input type="text" class="form-control" id="domicilio" placeholder="{{alumno.domicilio}}" name="domicilio">
+            </div>
+        
+            <div class="form-group">
+            <label for="formAlumno">Correo</label>
+            <input type="email" class="form-control" id="correo" placeholder="{{alumno.email}}" name="email">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Editar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
